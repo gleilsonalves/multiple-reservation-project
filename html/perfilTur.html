@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Reservation</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/cadastroTur.css">
+    <link rel="stylesheet" href="/css/perfilTur.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="navbar navbar-dark bg-lightblue">
+        <img src="/img/logo.png" class="img-fluid logo" alt="Responsive image">
+    </nav>
+
+    <div class="text-white jumbotron-fluid cont-title">
+      <div class="container-fluid title container-title">        
+        <p class="title-text">Conclua seu cadastro conosco...</p>
+      </div>
+    </div>
+
+    <div class="container-fluid title-content">
+        <h4>Dados para perfil do turista</h4>
+    </div>
+
+    <div class="container content-profile">
+        <form>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="inputNameTur">Nome do Usuário</label>
+                        <input class="form-control form-control w-auto" type="text" id="inputNameTur" placeholder="Ex: Joaquim Jose">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="idadeInput">Idade</label>
+                        <select class="form-control w-auto" id="idadeInput">
+                            <option>16</option> <option>17</option>
+                            <option>18</option> <option>19</option> <option>20</option> <option>21</option> <option>22</option> <option>23</option> 
+                            <option>24</option> <option>25</option> <option>26</option> <option>27</option> <option>28</option> <option>29</option> 
+                            <option>30</option> <option>31</option> <option>32</option> <option>33</option> <option>34</option> <option>35</option> 
+                            <option>36</option> <option>37</option> <option>38</option> <option>39</option> <option>40</option> <option>41</option> 
+                            <option>42</option> <option>43</option> <option>44</option> <option>45</option> <option>46</option> <option>47</option> 
+                            <option>48</option> <option>49</option> <option>50</option> <option>51</option> <option>52</option> <option>53</option> 
+                            <option>54</option> <option>55</option> <option>56</option> <option>57</option> <option>58</option> <option>59</option> 
+                            <option>60</option> <option>61</option> <option>62</option> <option>63</option> <option>64</option> <option>65</option> 
+                            <option>66</option> <option>67</option> <option>68</option> <option>69</option> <option>70</option> <option>71</option> 
+                            <option>72</option> <option>73</option> <option>74</option> <option>75</option> <option>76</option> <option>77</option>
+                            <option>78</option> <option>79</option> <option>80</option> <option>81</option> <option>82</option> <option>83</option>
+                            <option>84</option> <option>85</option> <option>86</option> <option>87</option> <option>88</option> <option>89</option>
+                            <option>90</option> <option>91</option> <option>92</option> <option>93</option> <option>94</option> <option>95</option>
+                            <option>96</option> <option>97</option> <option>98</option> <option>99</option> <option>100</option>
+                        </select>            
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="inputNameTur">CPF</label>
+                        <input class="form-control form-control w-auto" type="text" id="inputCPF" placeholder="Ex: 000.000.111-22" oninput="mascara(this)" maxlength="11">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="country">País</label>
+                        <select class="form-control w-auto" id="country">
+                            <option value="BR">Brasil</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="state">Estado</label>
+                        <select class="form-control w-75" id="states" onchange="buscaCidades(this.value)">
+                            <option value="">Selecione um estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>            
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <select class="form-control w-auto" id="city">
+                        </select>            
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="inputImage">Foto Perfil</label>
+                        <input type="file" class="form-control-file" id="inputImage" style="width:8rem">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row-cols-2">            
+            <button class="btn btn-primary" type="button" id="btnSubmit">Salvar</button>
+            <button class="btn btn-primary" type="button" id="btnCancel">Sair</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+    <script src="/js/firebase/firebaseConnection.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="/js/stateCity.js"></script>
+    <script src="/js/cpf-cnpj-tel.js"></script>
+    <script src="/js/perfis/perfilTur.js"></script>
+</body>
+</html>

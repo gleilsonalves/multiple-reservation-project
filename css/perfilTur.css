@@ -1,0 +1,15 @@
+.content-profile{
+    display: block;
+    margin-top: 5%;
+}
+
+.content-profile label{
+    font-weight: bold;
+}
+
+.title-content h4{
+    margin-left: 2%;
+    color: white;
+    font-weight: bold;
+    font-style: oblique;
+}

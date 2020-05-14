@@ -1,0 +1,113 @@
+.container-login{
+    /* border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.233); */
+    padding: 0%;
+    margin-left: 24%;
+    margin-top: 8%;
+    display: block;
+    width: 50%;
+    justify-content: center;
+}
+
+.container-login h5{
+    /* margin-bottom: 3%; */
+    color: white;
+    text-align: center;
+}
+
+.social-media{
+    margin: 1rem 0;
+}
+
+.link-social-media:not(:first-child){
+    margin-left: 1%;
+}
+
+.list-social-media{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+label, small{
+    color: white;
+    font-weight: normal;
+}
+
+.item-social-media{
+    border: 1px solid;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #ffffff;
+    transition: background-color .75s;
+}
+
+.link-social-media:hover .item-social-media{
+    background-color: rgb(4, 11, 65);
+    color: #fff;
+    border-color: rgb(4, 11, 65);
+}
+
+.change-page{
+    margin-top: 1%;
+}
+
+.change-page h4{
+    color: white;
+    font-size: 15px;
+}
+
+.change-page a{
+    color: yellow;
+    font-size: auto;
+}
+
+.content-loginTur{
+
+    margin-top: 1%;
+}
+
+.content-loginTur label{
+    color: white;
+}
+
+.btn-loginTur{
+    margin-left: 1%;
+    margin-top: .4rem;
+}
+
+.cadastro-content{
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.login-content h4{
+    color: white;
+    font-weight: bolder;
+}
+
+.cadastro-btn{
+    margin: 1%;
+}
+
+.change-page{
+    margin-top: 1%;
+    text-align: center;
+}
+
+.change-page h4{
+    color: white;
+    font-size: 15px;
+}
+
+.change-page a{
+    color: yellow;
+    font-size: auto;
+}
+
+.btn-submit{
+    margin-right: .5rem;
+}

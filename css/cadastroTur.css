@@ -1,0 +1,45 @@
+.cadastro-content{
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.cadastro-content h4{
+    color: white;
+    font-weight: bolder;
+}
+
+label{
+    color: white;
+    font-weight: normal;
+}
+
+#help{
+    color: white;
+}
+
+.col-auto label, .col-auto input, .col-auto small{
+    padding-bottom: 1%;
+}
+
+.cadastro-btn{
+    margin: 1%;
+}
+
+.change-page{
+    margin-top: 1%;
+    text-align: center;
+}
+
+.change-page h4{
+    color: white;
+    font-size: 15px;
+}
+
+.change-page a{
+    color: yellow;
+    font-size: auto;
+}
+
+.btn-submit{
+    margin-right: .5rem;
+}

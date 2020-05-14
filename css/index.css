@@ -1,0 +1,57 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    font-weight: bold;
+}
+
+body{
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title{    
+    background-color: rgba(0, 0, 0, 0.205);
+}
+
+.title-text{
+    font-size: .75rem;
+    margin-left: .2rem;
+    font-weight: bolder;
+}
+
+.logo{
+    position: relative;    
+    width: 40vh;
+    margin-left: 1%;
+}
+
+.home-text{
+    margin-top: 11%;
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+.text{
+    font-size: 1.2rem;
+}
+
+.home-text h4, .home-text p{
+    text-align: center;
+}
+
+.final-text{
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sub-menu{
+    color: white;
+    font-weight: bolder;
+}

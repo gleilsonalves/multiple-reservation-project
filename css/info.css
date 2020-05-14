@@ -1,0 +1,34 @@
+.content-info{
+    width: 100%;
+}
+
+.texto-apresentacao{
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.178);
+    text-align: center;
+    color: white;
+}
+
+.texto-apresentacao h5{
+    padding-top: 1rem;
+    font-size: 100%;
+}
+
+.texto-apresentacao h6{
+    padding-bottom: .4rem;
+    font-size: 80%;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.texto-apresentacao h3{
+    padding-top: .5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 120%;
+}
+
+.carrousel-div{
+    width: 70%;
+}

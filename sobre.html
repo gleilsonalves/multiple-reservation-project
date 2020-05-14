@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Reservation</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="navbar navbar-dark bg-lightblue">
+     <!--  <a class="navbar-brand font-weight-bold" href="#">Menu</a> -->
+      <img src="/img/logo.png" class="img-fluid logo" alt="Responsive image">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre Nós</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Locais
+            </a>
+            <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item sub-menu" href="info.html">informações</a>
+              <a class="dropdown-item sub-menu" href="#">Atrações/Passeios</a>
+            </div>
+          <li class="nav-item active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login
+            </a>
+            <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/loginTur.html">Faça login</a>
+              <a class="dropdown-item" href="cadastroTur.html">Cadastre-se</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="text-white jumbotron-fluid cont-title">
+      <div class="container-fluid title container-title">
+        
+        <p class="title-text">Conheça um pouco da equipe Multiple Reservation.</p>
+      </div>
+    </div>
+
+    <div class="container-fluid cards">
+
+      <div class="row">
+        <div class="col-sm regiter-body">
+          <img src="/img/gle.jpg" alt="" class="img-fluid rounded images">
+          <p>Gleilson Alves</p>
+        </div>
+        <div class="col-sm regiter-body">
+          <img src="/img/fernando.jpeg" alt="" class="img-fluid rounded images">
+          <p>Fernando Moreira</p>
+        </div>
+        <div class="col-sm regiter-body">
+          <img src="/img/cris.jpeg" alt="" class="img-fluid rounded images">
+          <p>Crisostomo Carneiro</p>
+        </div>
+      </div>        
+    </div>
+
+    <!-- <div class="container-fluid content-sobre">
+      <p>Somos um grupo de graduandos em Analise e Desenvolvimento de sistemas, 
+        e estamos focados no desenvolvimento de soluções web para as necessidades 
+        do dia a dia da população de uma forma em geral.
+        Estamos empenhados em buscar tais soluções, pois o nosso objetivo é proporcionar 
+        soluções fáceis para todos utilizando ferramentas web.</p>
+    </div> -->
+
+    <div class="accordion desc-content" id="accordionExample">
+      <div class="card bg-dark text-white">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Gleilson Alves
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            Estudante graduando em Análise e Desenvolvimento de Sistemas, com foco na área de desenvolvimento de software desktop, bem como aplicações web e mobile.
+          </div>
+        </div>
+      </div>
+      <div class="card bg-dark text-white">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Fernando Moreira
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Estudante graduando em Análise e Desenvolvimento de Sistemas, focado na aréa de gestão e gerenciamento de projetos de TI.
+          </div>
+        </div>
+      </div>
+      <div class="card bg-dark text-white">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Crisostomo Carneiro
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            Estudante graduando em Análise e Desenvolvimento de Sistemas, focado na area de gerenciamento de banco de dados.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

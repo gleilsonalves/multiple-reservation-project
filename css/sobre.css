@@ -1,0 +1,53 @@
+.regiter-body{
+    /* background-color: rgba(0, 0, 0, 0.527);
+    border: 1px solid blue;
+    border-radius: 10px; */
+    text-align: center;
+    margin: .5%;
+}
+
+.regiter-body p{
+    width: 40%;
+    font-size: 1rem;
+    margin-top: .5rem;
+    margin-left: 6.3rem;
+    font-weight: bold;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.308);
+}
+
+.images{
+    width: 40%;
+    border: 1px solid white;
+    margin-top: 5%;
+}
+
+.content-sobre{
+    text-align: center;
+}
+
+.content-sobre p{
+    margin-top: 3%;
+    padding: 1%;
+    color: white;
+    background-color: rgba(0, 38, 255, 0.527);
+    font-size: 1rem;
+}
+
+.cards{
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.item-card{
+    margin: 1%;
+}
+
+.content-cards{
+    align-content: center;
+}
+
+.desc-content{
+    text-align: center;
+}

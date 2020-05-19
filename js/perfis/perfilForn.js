@@ -55,10 +55,10 @@ fotoPerfil.addEventListener('change', function(e){
 
 // Evento de inserção de dados no BD Firebase
 btnSubmit.addEventListener('click', function(){
-  const autoId = dataRef.push().key;
+  //const autoId = dataRef.push().key;
   
   if(tipoPessoa.value == 'fisica'){
-    dataRef.child(autoId).set({
+    dataRef.child(firebase.auth().currentUser.uid).set({
       tipo_user: 'fornecedor',
       nome: nomeForn.value,
       tipoPessoa: tipoPessoa.value,
@@ -77,7 +77,7 @@ btnSubmit.addEventListener('click', function(){
         alert('Verifique os dados');
     })
   }else{
-    dataRef.child(autoId).set({
+    dataRef.child(firebase.auth().currentUser.uid).set({
       tipo_user: 'fornecedor',
       nome: nomeForn.value,
       tipoPessoa: tipoPessoa.value,       

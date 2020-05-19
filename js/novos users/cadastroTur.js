@@ -23,10 +23,10 @@ btnSubmit.addEventListener('click', function(){
         user.sendEmailVerification().then(function(){
             console.log('Email de verificação enviado.');
             alert('Enviamos um e-mail de veirificação para o e-mail cadastrado, favor verifique!');
+            window.location.reload();
         }).catch(function(error){
             console.log(error);
-        });
-        window.location.reload();     
+        });     
     }).catch(function(error){
         console.log('Falha ao cadastrar');
         console.log(error);

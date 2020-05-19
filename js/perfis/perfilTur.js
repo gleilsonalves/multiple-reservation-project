@@ -55,13 +55,13 @@ fotoPerfil.addEventListener('change', function(e){
 
 // Evento de inserção de dados no BD Firebase
 btnSubmit.addEventListener('click', function(){
-  const autoId = dataRef.push().key;    
-  dataRef.child(autoId).set({
+  //const autoId = dataRef.push().key;    
+  dataRef.child(firebase.auth().currentUser.uid).set({
     tipo_user: 'turista',
     nome: nomeTur.value,
     idade: idade.value,        
     cpf: cpf.value,        
-    pais: pais.value,        
+    pais: pais.value,
     estado: estado.value,        
     cidade: cidade.value,        
     imagem: storage.ref('images/') + '/' + filePhoto.name

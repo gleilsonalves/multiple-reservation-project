@@ -6,27 +6,26 @@ var cpf = document.getElementById('cpf');
 var pais = document.getElementById('pais');
 var estado = document.getElementById('estado');
 var cidade = document.getElementById('cidade');
+var telefone = document.getElementById('telefone');
 var imagem = document.getElementById('img');
 
 firebase.auth().onAuthStateChanged(function(user){    
     if (user) {
         console.log('usuario logado');
-        var img;
-        
-        firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
-            img = snapshot.val().imagem;
-            console.log(img);            
-        });
-        
 
         firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
+            var storageRef = firebase.storage().ref('images/' + user.uid + '/perfil/' + snapshot.val().imagem)
+            storageRef.getDownloadURL().then(function(url){
+                imagem.src = url;
+            })
             nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
             idade.innerHTML = 'IDADE: ' + snapshot.val().idade + ' anos';
             cpf.innerHTML = 'CPF: ' + snapshot.val().cpf;
             pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
             estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
             cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
-            email.innerHTML = 'E-MAIL: ' + user.email;
+            telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
+            email.innerHTML = 'E-MAIL: ' + user.email;            
         })
     } else {
         console.log('usuario não logado');

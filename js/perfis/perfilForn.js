@@ -5,8 +5,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('usuario logado');
       console.log(user.email);
-      console.log('ID', user.uid);
-      console.log('Verificado?', user.emailVerified);
     } else {
       console.log('usuario nao logado');
     }
@@ -43,13 +41,19 @@ var filePhoto;
 // Evento de upload da foto do perfil para o storage
 fotoPerfil.addEventListener('change', function(e){
   var file = e.target.files[0];
-  var storageRef = storage.ref('images/' + file.name).put(file).then(function(result){
-      filePhoto = file;
-      alert('Foto anexada com sucesso!');
-      console.log('Upload da imagem realizado!');
-  }).catch(function(error){
-      console.log(error);
-      console.log('Erro no upload da imagem!');
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      var storageRef = storage.ref('images/' + user.uid + '/perfil/' + file.name).put(file).then(function(result){
+          filePhoto = file;
+          alert('Foto anexada com sucesso!');
+          console.log('Upload Foto OK!');
+      }).catch(function(error){
+          console.log(error);
+          console.log('Erro no upload da imagem!');
+      })
+    }else{
+      console.log('Usuário nao autenticado, upload de foto fail!');
+    }
   })
 });
 
@@ -69,7 +73,8 @@ btnSubmit.addEventListener('click', function(){
       pais: pais.value,        
       estado: estado.value,        
       cidade: cidade.value,        
-      imagem: storage.ref('images/') + '/' + filePhoto.name
+      imagem_URL: storage.ref('images/' + firebase.auth().currentUser.uid) + '/perfil/' + filePhoto.name,
+      imagem: filePhoto.name
     }).then(function(){
         alert('Dados Salvos!');
         window.location.assign('showForn.html');
@@ -87,7 +92,8 @@ btnSubmit.addEventListener('click', function(){
       pais: pais.value,        
       estado: estado.value,        
       cidade: cidade.value,        
-      imagem: storage.ref('images/') + '/' + filePhoto.name
+      imagem_URL: storage.ref('images/' + firebase.auth().currentUser.uid) + '/perfil/' + filePhoto.name,
+      imagem: filePhoto.name
     }).then(function(){
         alert('Dados Salvos!');
         window.location.assign('showForn.html');

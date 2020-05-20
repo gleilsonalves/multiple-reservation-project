@@ -26,19 +26,32 @@
     </div>
 
     <div class="container-fluid">
+      <img src="" class="img-fluid w-25" id="img" style="margin-left: 1.3rem; margin-bottom: .5rem; border-radius: 50%;">
+    </div>
+
+    <div class="container-fluid">
       <ul class="list-group">
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="nome"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="email"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="idade"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="cpf"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="pais"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="estado"></li>
-        <li class="list-group-item w-50 bg-dark dado-perfil" id="cidade"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="nome"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="email"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="telefone"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="idade"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cpf"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cnpj"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="pais"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="estado"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cidade"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="serviço"></li>
       </ul>
     </div>
 
     <div class="btn">
-      <button type="button" class="btn btn-primary" id="btnSignOut">Sign Out</button>
+      <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
+    </div>
+    <div class="btn">
+      <button type="button" class="btn btn-primary" id="btnCadServ">Cadastrar Serviço +</button>
+    </div>
+    <div class="btn">
+      <a type="button" class="btn btn-primary" id="btnNaveg" href="#" style="text-decoration: none;">Navegar</a>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>

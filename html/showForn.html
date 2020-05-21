@@ -27,33 +27,42 @@
         <h4>Dados Perfil do Fornecedor</h4>
     </div>
 
-    <div class="container-fluid">
-      <img src="" class="img-fluid w-25" id="img" style="margin-left: 1.3rem; margin-bottom: .5rem; border-radius: 50%;">
+    <div class="container-fluid" id="imgProfile">
+      <img src="/img/profile.png" class="img-fluid w-25" id="img">
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="dataContent">
       <ul class="list-group">
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="nome"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="email"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="telefone"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="idade"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="cpf"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="cnpj"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="pais"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="estado"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="cidade"></li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="serviço"></li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="nome">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="email">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="telefone">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="idade">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cpf">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cnpj">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="pais">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="estado">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="cidade">//sem dados</li>
+        <li class="list-group-item w-auto bg-dark dado-perfil" id="serviço">//sem dados</li>
       </ul>
     </div>
 
-    <div class="btn">
-      <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
+    <div class="embed-responsive embed-responsive-1by1" id="iframeContent" style="position: absolute; display: none;">
+      <iframe class="embed-responsive-item" src="/html/frame/frameServico.html"></iframe>
     </div>
-    <div class="btn">
-      <a type="button" class="btn btn-primary" id="btnCadServ" href="#" style="text-decoration: none;">Cadastrar Serviço <i class="fas fa-plus-circle"></i></a>
-    </div>
-    <div class="btn">
-      <a type="button" class="btn btn-primary" id="btnNaveg" href="#" style="text-decoration: none;">Navegar</a>
+    
+    <div id="btnContent">
+      <div class="btn">
+        <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilForn.html" style="text-decoration: none;">Inserir Dados</a>
+      </div>
+      <div class="btn">
+        <a type="button" class="btn btn-primary" id="btnCadServ" href="#" style="text-decoration: none;">Cadastrar Serviço <i class="fas fa-plus-circle"></i></a>
+      </div>
+      <div class="btn">
+        <a type="button" class="btn btn-primary" id="btnNaveg" href="#" style="text-decoration: none;">Navegar</a>
+      </div>
+      <div class="btn">
+        <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
+      </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>

@@ -16,39 +16,37 @@ firebase.auth().onAuthStateChanged(function(user){
     if (user) {
         console.log('usuario logado');
         firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
-          var storageRef = firebase.storage().ref('images/' + user.uid + '/perfil/' + snapshot.val().imagem)
-          storageRef.getDownloadURL().then(function(url){
-              imagem.src = url;
-          })
-          
-          var tipoPessoa = snapshot.val().tipoPessoa;
-          
-          if (tipoPessoa == 'fisica'){
-            nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
-            idade.innerHTML = 'IDADE: ' + snapshot.val().idade + ' anos';
-            cpf.innerHTML = 'CPF: ' + snapshot.val().cpf;
-            telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
-            pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
-            estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
-            cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
-            servico.innerHTML = 'TIPO SERVIÇO: ' + snapshot.val().tipoServiço;
-            email.innerHTML = 'E-MAIL: ' + user.email;
-
-            cnpj.style.display = 'none';
-          }else{
-            nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
-            idade.style.display = 'none';
-            cnpj.innerHTML = 'CNPJ: ' + snapshot.val().cnpj;
-            telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
-            pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
-            estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
-            cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
-            email.innerHTML = 'E-MAIL: ' + user.email;
-            servico.innerHTML = 'TIPO SERVIÇO: ' + snapshot.val().tipoServiço;
-            cpf.style.display = 'none';
-          }
-                      
-      })
+            var storageRef = firebase.storage().ref('images/' + user.uid + '/perfil/' + snapshot.val().imagem)
+            storageRef.getDownloadURL().then(function(url){
+                imagem.src = url;
+            })
+            
+            var tipoPessoa = snapshot.val().tipoPessoa;
+            
+            if (tipoPessoa == 'fisica'){
+                nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
+                idade.innerHTML = 'IDADE: ' + snapshot.val().idade + ' anos';
+                cpf.innerHTML = 'CPF: ' + snapshot.val().cpf;
+                telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
+                pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
+                estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
+                cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
+                servico.innerHTML = 'TIPO SERVIÇO: ' + snapshot.val().tipoServiço;
+                email.innerHTML = 'E-MAIL: ' + user.email;
+                cnpj.style.display = 'none';
+            }else{
+                nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
+                idade.style.display = 'none';
+                cnpj.innerHTML = 'CNPJ: ' + snapshot.val().cnpj;
+                telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
+                pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
+                estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
+                cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
+                email.innerHTML = 'E-MAIL: ' + user.email;
+                servico.innerHTML = 'TIPO SERVIÇO: ' + snapshot.val().tipoServiço;
+                cpf.style.display = 'none';
+            }                      
+        })
     } else {
         console.log('usuario não logado');
     }
@@ -65,3 +63,16 @@ btnOut.addEventListener('click', function(){
       });
 })
 
+/* var fotoPerfil = document.getElementById('imgProfile');
+var dados = document.getElementById('dataContent');
+var botoes = document.getElementById('btnContent');
+
+var cadastrarServ = document.getElementById('btnCadServ');
+var iframe = document.getElementById('iframeContent');
+
+cadastrarServ.addEventListener('click', function(){
+    iframe.style.display = 'block';
+    fotoPerfil.style.display = 'none';
+    dados.style.display = 'none';
+    botoes.style.display = 'none';
+}) */

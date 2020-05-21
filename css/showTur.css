@@ -1,4 +1,10 @@
 .dado-perfil{
     color: white;
-    font-weight: bold;
+    font-weight: normal;
+}
+
+#img{
+    margin-left: 1.3rem; 
+    margin-bottom: .5rem; 
+    border-radius: 50%;
 }

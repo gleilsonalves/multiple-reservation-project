@@ -13,25 +13,23 @@ var btnSubmit = document.querySelector('#submit');
 
 // Autenticar com e-mail e senha
 btnSubmit.addEventListener('click', function(){
-    firebase.auth().signInWithEmailAndPassword(inputEmail.value, inputPass.value).then(function(result){
-        if (user.emailVerified == true){
-            console.log('Autenticação realizada com sucesso.');
-            alert('Bem Vindo ' + inputEmail.value +' a plataforma Multiple Reservation!');
-        };
+    firebase.auth().signInWithEmailAndPassword(inputEmail.value, inputPass.value).then(function(result){        
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user.emailVerified == true){
+                console.log(result);
+                console.log('Autenticação realizada com sucesso.');
+                alert('Bem Vindo a plataforma Multiple Reservation!');
+                window.location.assign('html/showTur.html');
+            }else{
+                console.log('e-mail não verificado.');
+                alert('Verifique o link de confirmação no e-mail cadastrado.');
+                window.location.reload();
+            }
+        })        
     }).catch(function(error){
         console.log('Erro no login.');
         console.log(error);
     })
-    // Verificador para ver se o user está logado e direcionar para pagina de perfil
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user.emailVerified == true) {
-            window.location.assign('html/perfilTur.html')
-        } else {
-            console.log('Erro no observador.');
-            alert('Verifique o link de confirmação no e-mail cadastrado.');
-            window.location.reload();
-        }
-    });
 })
 
 
@@ -54,7 +52,7 @@ function signIn(provider){
         } else {
             console.log('Erro no observador.');
         }
-    });    
+    })
 }
 
 // Autenticar com Facebook

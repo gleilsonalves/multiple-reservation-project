@@ -8,3 +8,31 @@
     margin-bottom: .5rem; 
     border-radius: 50%;
 }
+
+#nome{
+    margin-left: .4rem;
+}
+
+#email{
+    margin-left: 1.05rem;
+}
+
+#idade{
+    margin-left: 1.35rem;
+} 
+
+#cpf{
+    margin-left: 2.25rem;
+}
+
+#pais{
+    margin-left: 2.15rem;
+} 
+
+#estado, #states{
+    margin-left: .9rem;
+} 
+
+#cidade, #city{
+    margin-left: .8rem;
+}

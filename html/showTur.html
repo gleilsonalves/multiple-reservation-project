@@ -26,32 +26,111 @@
     </div>
 
     <div class="container-fluid">
-      <img src="/img/profile.png" class="img-fluid w-25" id="img">
+      <img src="/img/profile.png" class="img-fluid" id="img" style="width: 20%;">
     </div>
 
     <div class="container-fluid">
-      <ul class="list-group">
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="nome">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="email">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="idade">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="cpf">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="telefone">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="pais">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="estado">sem dados</li>
-        <li class="list-group-item w-auto bg-dark dado-perfil" id="cidade">sem dados</li>
-      </ul>
-    </div>
-
-    <div class="btn">
-      <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
-    </div>
+      <div class="row content-data">
+          <a style="color: white;">Usuário</a> 
+          <div class="col">
+            <input type="text" class="w-auto" id="nome" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+            <button class="btn btn-dark" type="button" id="editarNome">Editar</button>
+            <button class="btn btn-dark" type="button" id="saveNome" style="display: none;">Salvar</button>
+          </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">E-mail</a> 
+        <div class="col">
+          <input type="text" class="w-auto" id="email" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">Idade</a> 
+        <div class="col">
+          <input type="text" id="idade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <button class="btn btn-dark" type="button" id="editarIdade">Editar</button>
+          <button class="btn btn-dark" type="button" id="saveIdade" style="display: none;">Salvar</button>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">CPF</a> 
+        <div class="col">
+          <input type="text" id="cpf" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">Telefone</a> 
+        <div class="col">
+          <input type="text" id="telefone" oninput="mTel(this)" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <button class="btn btn-dark" type="button" id="editarTelefone">Editar</button>
+          <button class="btn btn-dark" type="button" id="saveTelefone" style="display: none;">Salvar</button>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">País</a>
+        <div class="col">
+          <input type="text" id="pais" placeholder="sem dados" style=" text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">Estado</a> 
+        <div class="col">
+          <input type="text" id="estado" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <select class="form-control w-auto" id="states" onchange="buscaCidades(this.value)" style="display: none;">
+            <option value="">Selecione um estado</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+          <button class="btn btn-dark" type="button" id="editarEstado">Editar</button>
+          <button class="btn btn-dark" type="button" id="saveEstado" style="display: none;">Salvar</button>
+        </div>
+      </div>
+      <div class="row content-data">
+        <a style="color: white;">Cidade</a> 
+        <div class="col">
+          <input type="text" id="cidade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <select class="form-control w-auto" id="city" style="display: none;">
+          </select>
+          <!-- <button type="button" id="editarCidade">Editar</button>
+          <button type="button" style="display: none;">Ok</button> -->
+        </div>
+      </div>
+    </div><br>
+    
     <div class="btn">
       <a type="button" class="btn btn-primary" id="btnNaveg" href="#" style="text-decoration: none;">Navegar</a>
     </div>
     <div class="btn">
-      <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilTur.html" style="text-decoration: none;">Inserir Dados</a>
+      <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilTur.html" style="text-decoration: none;">Inserir Dados Completos</a>
+    </div>    
+    <div class="btn">
+      <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
     </div>
-
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
@@ -62,5 +141,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="/js/dados perfil/showTur.js"></script>
+    <script src="/js/stateCity.js"></script>
 </body>
 </html>

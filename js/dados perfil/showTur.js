@@ -12,20 +12,19 @@ var imagem = document.getElementById('img');
 firebase.auth().onAuthStateChanged(function(user){    
     if (user) {
         console.log('usuario logado');
-
         firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
             var storageRef = firebase.storage().ref('images/' + user.uid + '/perfil/' + snapshot.val().imagem)
             storageRef.getDownloadURL().then(function(url){
                 imagem.src = url;
             })
-            nome.innerHTML = 'USUÁRIO: ' + snapshot.val().nome;
-            idade.innerHTML = 'IDADE: ' + snapshot.val().idade + ' anos';
-            cpf.innerHTML = 'CPF: ' + snapshot.val().cpf;
-            pais.innerHTML = 'PAÍS: ' + snapshot.val().pais;
-            estado.innerHTML = 'ESTADO: ' + snapshot.val().estado;
-            cidade.innerHTML = 'CIDADE: ' + snapshot.val().cidade;
-            telefone.innerHTML = 'TELEFONE: ' + snapshot.val().telefone;
-            email.innerHTML = 'E-MAIL: ' + user.email;            
+            nome.value = snapshot.val().nome;
+            idade.value = snapshot.val().idade + ' anos';
+            cpf.value = snapshot.val().cpf;
+            pais.value = snapshot.val().pais;
+            estado.value = snapshot.val().estado;
+            cidade.value = snapshot.val().cidade;
+            telefone.value = snapshot.val().telefone;
+            email.value = user.email;            
         })
     } else {
         console.log('usuario não logado');
@@ -43,3 +42,104 @@ btnOut.addEventListener('click', function(){
     });
 })
 
+//evento de editar dados
+var editarNome = document.getElementById('editarNome');
+var saveNome =  document.getElementById('saveNome');
+var editarIdade = document.getElementById('editarIdade');
+var editarTelefone = document.getElementById('editarTelefone');
+var editarEstado = document.getElementById('editarEstado');
+var editarCidade = document.getElementById('editarCidade');
+var saveIdade = document.getElementById('saveIdade');
+var saveTelefone = document.getElementById('saveTelefone');
+var editarEstado = document.getElementById('editarEstado');
+var saveEstado = document.getElementById('saveEstado');
+
+editarNome.addEventListener('click', function(){
+    nome.removeAttribute('disabled');
+    nome.setAttribute('required', true);
+    editarNome.style.display = "none";
+    saveNome.style.display = "inline";
+})
+
+saveNome.addEventListener('click', function(){
+    var dataRef = firebase.database().ref();
+    var nome = document.getElementById('nome').value;
+    data = {nome};
+    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
+
+    document.getElementById('nome').setAttribute('disabled', true);
+    editarNome.style.display = "inline";
+    saveNome.style.display = "none";
+})
+
+editarIdade.addEventListener('click', function(){
+    idade.removeAttribute('disabled');
+    editarIdade.style.display = "none";
+    saveIdade.style.display = "inline";
+})
+
+saveIdade.addEventListener('click', function(){
+    var dataRef = firebase.database().ref();
+    var idade = document.getElementById('idade').value;
+    data = {idade};
+    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
+
+    document.getElementById('idade').setAttribute('disabled', true);
+    editarIdade.style.display = "inline";
+    saveIdade.style.display = "none";    
+})
+
+editarTelefone.addEventListener('click', function(){
+    telefone.removeAttribute('disabled');
+    editarTelefone.style.display = "none";
+    saveTelefone.style.display = "inline";
+})
+
+saveTelefone.addEventListener('click', function(){
+    var dataRef = firebase.database().ref();
+    var telefone = document.getElementById('telefone').value;
+    data = {telefone};
+    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
+
+    document.getElementById('telefone').setAttribute('disabled', true);
+    editarTelefone.style.display = "inline";
+    saveTelefone.style.display = "none";    
+})
+
+function mTel(tel){
+    var v = tel.value;
+ 
+    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+       tel.value = v.substring(0, v.length-1);
+       return;
+    }
+ 
+    tel.setAttribute("maxlenght", "14");
+    if (v.length == 2) tel.value += " ";
+    if (v.length == 8) tel.value += "-";
+}
+
+editarEstado.addEventListener('click', function(){
+    document.getElementById('estado').style.display = "none";
+    document.getElementById('cidade').style.display = "none";
+    document.getElementById('city').style.display = "inline";
+    document.getElementById('states').style.display = "inline";
+    editarEstado.style.display = "none";
+    saveEstado.style.display = "inline";
+})
+
+saveEstado.addEventListener('click', function(){
+    var dataRef = firebase.database().ref();
+    var cidade = document.querySelector('#city').value;
+    var estado = document.querySelector('#states').value;
+
+    data = {estado, cidade};
+    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
+
+    document.getElementById('estado').style.display = "inline";
+    document.getElementById('cidade').style.display = "inline";
+    document.getElementById('city').style.display = "none";
+    document.getElementById('states').style.display = "none";
+    editarEstado.style.display = "inline";
+    saveEstado.style.display = "none";
+})

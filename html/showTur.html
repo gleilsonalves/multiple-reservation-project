@@ -12,7 +12,7 @@
 </head>
 <body>    
     <nav class="navbar navbar-dark bg-lightblue">
-        <img src="/img/logo.png" class="img-fluid logo" alt="Responsive image">
+        <img src="/img/logo.png" class="img-fluid logo" id="logo" alt="Responsive image">
     </nav>
 
     <div class="text-white jumbotron-fluid cont-title">
@@ -33,9 +33,9 @@
       <div class="row content-data">
           <a style="color: white;">Usuário</a> 
           <div class="col">
-            <input type="text" class="w-auto" id="nome" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
-            <button class="btn btn-dark" type="button" id="editarNome">Editar</button>
-            <button class="btn btn-dark" type="button" id="saveNome" style="display: none;">Salvar</button>
+            <input type="text" value="" class="w-auto" id="nome" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+            <button class="btn btn-dark btn-sm" type="button" id="saveNome" style="display: none;">Salvar</button>
+            <button class="btn btn-dark btn-sm" type="button" id="editarNome" style="display: none;">Editar</button>
           </div>
       </div>
       <div class="row content-data">
@@ -48,8 +48,8 @@
         <a style="color: white;">Idade</a> 
         <div class="col">
           <input type="text" id="idade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
-          <button class="btn btn-dark" type="button" id="editarIdade">Editar</button>
-          <button class="btn btn-dark" type="button" id="saveIdade" style="display: none;">Salvar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="editarIdade" style="display: none;">Editar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="saveIdade" style="display: none;">Salvar</button>
         </div>
       </div>
       <div class="row content-data">
@@ -62,8 +62,8 @@
         <a style="color: white;">Telefone</a> 
         <div class="col">
           <input type="text" id="telefone" oninput="mTel(this)" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
-          <button class="btn btn-dark" type="button" id="editarTelefone">Editar</button>
-          <button class="btn btn-dark" type="button" id="saveTelefone" style="display: none;">Salvar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="editarTelefone" style="display: none;">Editar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="saveTelefone" style="display: none;">Salvar</button>
         </div>
       </div>
       <div class="row content-data">
@@ -106,8 +106,8 @@
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
         </select>
-          <button class="btn btn-dark" type="button" id="editarEstado">Editar</button>
-          <button class="btn btn-dark" type="button" id="saveEstado" style="display: none;">Salvar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="editarEstado" style="display: none;">Editar</button>
+          <button class="btn btn-dark btn-sm" type="button" id="saveEstado" style="display: none;">Salvar</button>
         </div>
       </div>
       <div class="row content-data">
@@ -116,21 +116,24 @@
           <input type="text" id="cidade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
           <select class="form-control w-auto" id="city" style="display: none;">
           </select>
-          <!-- <button type="button" id="editarCidade">Editar</button>
-          <button type="button" style="display: none;">Ok</button> -->
         </div>
       </div>
-    </div><br>
+    </div>
     
+    <h7 id="info1" style="color: white; font-weight: normal;">*Se ainda não tem dados cadastrados, click em NOVOS DADOS.</h7>
+    
+    <div class="row input-group-sm" style="margin-left: .2rem">
+      <input class="" type="file" id="updatePhoto" style="background-color: rgba(255, 255, 255, 0.541); display: none;">
+    </div>
+  
     <div class="btn">
       <a type="button" class="btn btn-primary" id="btnNaveg" href="#" style="text-decoration: none;">Navegar</a>
-    </div>
-    <div class="btn">
-      <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilTur.html" style="text-decoration: none;">Inserir Dados Completos</a>
-    </div>    
-    <div class="btn">
+      <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilTur.html" style="text-decoration: none;">Novos Dados</a>
+      <button type="button" class="btn btn-primary" id="btnEdit">Editar Dados</button>
+      <button type="button" class="btn btn-primary" id="btnFimEdit" style="display: none;">Finalizar Edição</button>
       <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>

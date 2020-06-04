@@ -44,15 +44,76 @@ btnOut.addEventListener('click', function(){
 
 //evento de editar dados
 var editarNome = document.getElementById('editarNome');
-var saveNome =  document.getElementById('saveNome');
 var editarIdade = document.getElementById('editarIdade');
 var editarTelefone = document.getElementById('editarTelefone');
 var editarEstado = document.getElementById('editarEstado');
-var editarCidade = document.getElementById('editarCidade');
+var saveNome =  document.getElementById('saveNome');
 var saveIdade = document.getElementById('saveIdade');
 var saveTelefone = document.getElementById('saveTelefone');
-var editarEstado = document.getElementById('editarEstado');
 var saveEstado = document.getElementById('saveEstado');
+
+var btnEdit = document.getElementById('btnEdit');
+var btnFimEdit = document.getElementById('btnFimEdit');
+var btnNaveg = document.getElementById('btnNaveg');
+var btnPerfil = document.getElementById('btnPerfil');
+var btnSignOut = document.getElementById('btnSignOut');
+var updatePhoto = document.getElementById('updatePhoto');
+
+
+updatePhoto.addEventListener('change', function(e){
+    var storage = firebase.storage();
+    var dataRef = firebase.database().ref();
+
+    var file = e.target.files[0];
+    storage.ref('images/' + firebase.auth().currentUser.uid + '/perfil/' + file.name).put(file)
+    .then(function(result){
+        console.log(result);
+        alert('Foto ok!');        
+    }).catch(function(error){
+        console.log(error);
+        alert('Erro ao anexar foto!');
+    });
+
+    var imagem = file.name;
+    var imagem_URL = storage.ref('images/' + firebase.auth().currentUser.uid) + '/perfil/' + file.name;
+
+    data = {imagem, imagem_URL};
+    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
+
+    var storageRef = firebase.storage().ref('images/' + firebase.auth().currentUser.uid + '/perfil/' + file.name)
+        storageRef.getDownloadURL().then(function(url){
+            document.getElementById('logo').src = url;
+        })
+})
+
+btnEdit.addEventListener('click', function(){
+    editarNome.style.display = "inline";
+    editarIdade.style.display = "inline";
+    editarTelefone.style.display = "inline";
+    editarEstado.style.display = "inline";
+    btnFimEdit.style.display = "inline";
+    updatePhoto.style.display = "inline";
+    btnEdit.style.display = "none";
+    btnNaveg.style.display = "none";
+    btnPerfil.style.display = "none";
+    btnSignOut.style.display = "none";
+    document.getElementById('info1').innerHTML = '*Edição para dados já cadastrados.';
+})
+
+btnFimEdit.addEventListener('click', function(){
+    editarNome.style.display = "none";
+    editarIdade.style.display = "none";
+    editarTelefone.style.display = "none";
+    editarEstado.style.display = "none";
+    btnFimEdit.style.display = "none";
+    updatePhoto.style.display = "none";
+    btnEdit.style.display = "inline";
+    btnNaveg.style.display = "inline";
+    btnPerfil.style.display = "inline";
+    btnSignOut.style.display = "inline";
+    document.getElementById('info1').innerHTML = '*Se ainda não tem dados cadastrados, click em NOVOS DADOS.';
+    location.reload();
+})
 
 editarNome.addEventListener('click', function(){
     nome.removeAttribute('disabled');

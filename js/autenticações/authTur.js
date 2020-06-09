@@ -18,6 +18,7 @@ btnSubmit.addEventListener('click', function(){
     if(user){
         alert('Já existe usuário logado.');
         alert('Saia do usuário atual para poder fazer novo login!');
+        window.location.reload();
     }else{
         firebase.auth().signInWithEmailAndPassword(inputEmail.value, inputPass.value).then(function(result){        
             firebase.auth().onAuthStateChanged(function(user){

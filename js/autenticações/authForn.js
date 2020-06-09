@@ -8,21 +8,30 @@ var btnSubmit = document.querySelector('#submit');
 // Autenticar com e-mail e senha
 
 btnSubmit.addEventListener('click', function(){
-    firebase.auth().signInWithEmailAndPassword(inputEmailForn.value, inputPassForn.value).then(function(result){        
-        firebase.auth().onAuthStateChanged(function(user){
-            if(user.emailVerified == true){
-                console.log(result);
-                console.log('Autenticação realizada com sucesso.');
-                alert('Bem Vindo a plataforma Multiple Reservation!');
-                window.location.assign('html/showForn.html');
-            }else{
-                console.log('e-mail não verificado.');
-                alert('Verifique o link de confirmação no e-mail cadastrado.');
-                window.location.reload();
-            }
-        })        
-    }).catch(function(error){
-        console.log('Erro no login.');
-        console.log(error);
-    })
+    var user = firebase.auth().currentUser;
+
+    if(user){
+        alert('Já existe usuário logado.');
+        alert('Saia do usuário atual para poder fazer novo login!');
+        window.location.reload();
+    }else{
+        firebase.auth().signInWithEmailAndPassword(inputEmailForn.value, inputPassForn.value).then(function(result){        
+            firebase.auth().onAuthStateChanged(function(user){
+                if(user.emailVerified == true){
+                    console.log(result);
+                    console.log('Autenticação realizada com sucesso.');
+                    alert('Bem Vindo a plataforma Multiple Reservation!');
+                    window.location.assign('html/showForn.html');
+                }else{
+                    console.log('e-mail não verificado.');
+                    alert('Verifique o link de confirmação no e-mail cadastrado.');
+                    window.location.reload();
+                }
+            })        
+        }).catch(function(error){
+            console.log('Erro no login.');
+            console.log(error);
+        })
+    }
+    
 })

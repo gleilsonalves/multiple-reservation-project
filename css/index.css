@@ -55,3 +55,13 @@ body{
     color: white;
     font-weight: bolder;
 }
+
+.logado{
+    margin-left: .7rem; 
+    color: white;
+    display: none;
+}
+
+.btn-logado{
+    display: none;
+}

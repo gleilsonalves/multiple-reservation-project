@@ -1,5 +1,6 @@
 var logado = document.getElementById('logado');
 var btnLogado = document.getElementById('btnLogado');
+var btnPerfil = document.getElementById('btnPerfil');
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
@@ -9,10 +10,12 @@ firebase.auth().onAuthStateChanged(function(user){
         })
         logado.style.display = "inline";
         btnLogado.style.display = "inline";
+        btnPerfil.style.display = "inline";
     }else{
         console.log('Usuario nao logado');
         logado.style.display = "none";
         btnLogado.style.display = "none";
+        btnPerfil.style.display = "none";
     }
 })
 

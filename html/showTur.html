@@ -30,52 +30,52 @@
     </div>
 
     <div class="container-fluid">
-      <div class="row content-data">
-          <a style="color: white;">Usuário</a> 
+      <div class="row">
+          <a class="tags" style="color: white;">Usuário</a> 
           <div class="col">
-            <input type="text" value="" class="w-auto" id="nome" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+            <input class="inputs" type="text" value="" class="w-auto" id="nome" placeholder="sem dados" disabled>
             <button class="btn btn-dark btn-sm" type="button" id="saveNome" style="display: none;">Salvar</button>
             <button class="btn btn-dark btn-sm" type="button" id="editarNome" style="display: none;">Editar</button>
           </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">E-mail</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">E-mail</a> 
         <div class="col">
-          <input type="text" class="w-auto" id="email" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" class="w-auto" id="email" placeholder="sem dados" disabled>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">Idade</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">Idade</a> 
         <div class="col">
-          <input type="text" id="idade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="idade" placeholder="sem dados" disabled>
           <button class="btn btn-dark btn-sm" type="button" id="editarIdade" style="display: none;">Editar</button>
           <button class="btn btn-dark btn-sm" type="button" id="saveIdade" style="display: none;">Salvar</button>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">CPF</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">CPF</a> 
         <div class="col">
-          <input type="text" id="cpf" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="cpf" placeholder="sem dados" disabled>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">Telefone</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">Telefone</a> 
         <div class="col">
-          <input type="text" id="telefone" oninput="mTel(this)" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="telefone" oninput="mTel(this)" placeholder="sem dados" disabled>
           <button class="btn btn-dark btn-sm" type="button" id="editarTelefone" style="display: none;">Editar</button>
           <button class="btn btn-dark btn-sm" type="button" id="saveTelefone" style="display: none;">Salvar</button>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">País</a>
+      <div class="row">
+        <a class="tags" style="color: white;">País</a>
         <div class="col">
-          <input type="text" id="pais" placeholder="sem dados" style=" text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="pais" placeholder="sem dados" disabled>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">Estado</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">Estado</a> 
         <div class="col">
-          <input type="text" id="estado" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="estado" placeholder="sem dados" disabled>
           <select class="form-control w-auto" id="states" onchange="buscaCidades(this.value)" style="display: none;">
             <option value="">Selecione um estado</option>
             <option value="AC">Acre</option>
@@ -110,17 +110,17 @@
           <button class="btn btn-dark btn-sm" type="button" id="saveEstado" style="display: none;">Salvar</button>
         </div>
       </div>
-      <div class="row content-data">
-        <a style="color: white;">Cidade</a> 
+      <div class="row">
+        <a class="tags" style="color: white;">Cidade</a> 
         <div class="col">
-          <input type="text" id="cidade" placeholder="sem dados" style="text-align: start; background-color: rgba(255, 255, 255, 0.541); color: red; font-weight: bold;" disabled>
+          <input class="inputs" type="text" id="cidade" placeholder="sem dados" disabled>
           <select class="form-control w-auto" id="city" style="display: none;">
           </select>
         </div>
       </div>
     </div>
     
-    <h7 id="info1" style="color: white; font-weight: normal;">*Se ainda não tem dados cadastrados, click em NOVOS DADOS.</h7>
+    <h7 id="info1" style="color: white; font-weight: normal;">*Se ainda não há dados, click em NOVOS DADOS.</h7>
     
     <div class="row input-group-sm" style="margin-left: .2rem">
       <input class="" type="file" id="updatePhoto" style="background-color: rgba(255, 255, 255, 0.541); display: none;">
@@ -129,7 +129,7 @@
     <div class="btn">
       <a type="button" class="btn btn-primary" id="btnNaveg" href="/index.html" style="text-decoration: none;">Navegar</a>
       <a type="button" class="btn btn-primary" id="btnPerfil" href="/html/perfilTur.html" style="text-decoration: none;">Novos Dados</a>
-      <button type="button" class="btn btn-primary" id="btnEdit">Editar Dados</button>
+      <button type="button" class="btn btn-primary" id="btnEdit">Editar Dados Existentes</button>
       <button type="button" class="btn btn-primary" id="btnFimEdit" style="display: none;">Finalizar Edição</button>
       <button type="button" class="btn btn-primary" id="btnSignOut">SignOut / Sair</button>
     </div>

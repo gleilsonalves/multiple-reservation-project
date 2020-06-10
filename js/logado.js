@@ -18,9 +18,11 @@ firebase.auth().onAuthStateChanged(function(user){
 
 btnLogado.addEventListener('click', function(){
     firebase.auth().signOut().then(function() {
-        console.log('LogOut User');
+        console.log('LogOut');
+        alert('Deslogando');
+        window.location.reload();
       }).catch(function(error) {
-        console.log('LogOut Error')
+        console.log('Logout Error')
         console.log(error);
       });
 })

@@ -14,25 +14,44 @@
 }
 
 #email{
-    margin-left: 1.05rem;
+    margin-left: .95rem;
 }
 
 #idade{
-    margin-left: 1.35rem;
+    margin-left: 1.25rem;
 } 
 
 #cpf{
-    margin-left: 2.25rem;
+    margin-left: 2.05rem;
 }
 
 #pais{
-    margin-left: 2.15rem;
+    margin-left: 1.95rem;
 } 
 
 #estado, #states{
-    margin-left: .9rem;
+    margin-left: .8rem;
 } 
 
 #cidade, #city{
+    margin-left: .7rem;
+}
+
+.tags{
+    padding: .5rem; 
+    background-color: rgba(0, 0, 0, 0.562); 
+    margin-left: 1rem; 
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+.inputs{
+    text-align: start; 
+    background-color: rgba(0, 0, 0, 0.377); 
+    color: yellow; 
+    font-weight: bold;
+}
+
+#info1{
     margin-left: .8rem;
 }

@@ -1,0 +1,9 @@
+body{
+   background-image: url("/img/bg.jpg");
+   display: block;
+}
+
+.label-input{
+    color: yellow;
+    font-weight: bold;
+}

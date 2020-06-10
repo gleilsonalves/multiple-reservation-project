@@ -117,3 +117,11 @@ authYahooBotton.addEventListener('click', function(){
         }
     })
 })
+
+//abrir o pop-up para reset de senha
+function newPopup(){
+    var Window = window.open (
+        'popup.html',
+        'pagina',
+        "width=370, height=275, top=100, left=110, scrollbars=no " );
+}

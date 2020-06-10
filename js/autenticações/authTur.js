@@ -47,19 +47,10 @@ function signIn(provider){
         console.log(result);
         console.log('Autenticação realizada com sucesso.');
         var token = result.credential.accessToken;
-        alert('Bem Vindo ' + result.user.displayName +' a plataforma Multiple Reservation!');
+        alert('Bem Vindo a plataforma Multiple Reservation!');
     }).catch(function(error){
         console.log('Erro na autenticação');
         console.log(error);
-    })
-
-    //veerificar se o usuário logou e direcionar para a pagina de perfis
-    firebase.auth().onAuthStateChanged(function(user){
-        if (user != null) {
-            window.location.assign('html/perfilTur.html');
-        } else {
-            console.log('Erro no observador.');
-        }
     })
 }
 
@@ -73,7 +64,16 @@ authFacebookBotton.addEventListener('click', function(){
     }else{
         var provider = new firebase.auth.FacebookAuthProvider();
         signIn(provider);
+        
     }
+
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user != null) {
+            window.location.assign('html/showTur.html');
+        } else {
+            console.log('Erro no observador.');
+        }
+    })
 })
 
 // Autenticando com o Google
@@ -87,6 +87,14 @@ authGoogleBotton.addEventListener('click', function(){
         var provider = new firebase.auth.GoogleAuthProvider();
         signIn(provider);
     }
+
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user != null) {
+            window.location.assign('html/showTur.html');
+        } else {
+            console.log('Erro no observador.');
+        }
+    })
 })
 
 // Autenticando com Yahoo
@@ -100,4 +108,12 @@ authYahooBotton.addEventListener('click', function(){
         var provider = new firebase.auth.OAuthProvider('yahoo.com');
         signIn(provider);
     }
+
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user != null) {
+            window.location.assign('html/showTur.html');
+        } else {
+            console.log('Erro no observador.');
+        }
+    })
 })

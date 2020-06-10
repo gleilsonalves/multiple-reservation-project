@@ -5,7 +5,6 @@ var btnSubmit = document.getElementById('btnSubmit');
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log('usuario logado');
-    console.log(user.email);
   } else {
     console.log('usuario nao logado');
   }

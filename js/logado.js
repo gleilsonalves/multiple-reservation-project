@@ -7,7 +7,14 @@ firebase.auth().onAuthStateChanged(function(user){
     if(user){
         console.log('Usuario logado');
         firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
-            logado.innerHTML = 'Olá ' + snapshot.val().nome;
+            var tipoUser = snapshot.val().tipo_user;
+
+            if(tipoUser == 'turista'){
+                logado.innerHTML = 'Olá ' + snapshot.val().nome;
+            }else{
+                logado.innerHTML = 'Olá ' + snapshot.val().nome;
+                document.getElementById('btnPerfil').href = '/html/showForn.html';
+            }
         })
         logado.style.display = "inline";
         btnLogado.style.display = "inline";

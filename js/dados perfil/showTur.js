@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user){
                 imagem.src = url;
             })
             nome.value = snapshot.val().nome;
-            idade.value = snapshot.val().idade + ' anos';
+            idade.value = snapshot.val().idade;
             cpf.value = snapshot.val().cpf;
             pais.value = snapshot.val().pais;
             estado.value = snapshot.val().estado;
@@ -43,15 +43,6 @@ btnOut.addEventListener('click', function(){
 })
 
 //evento de editar dados
-var editarNome = document.getElementById('editarNome');
-var editarIdade = document.getElementById('editarIdade');
-var editarTelefone = document.getElementById('editarTelefone');
-var editarEstado = document.getElementById('editarEstado');
-var saveNome =  document.getElementById('saveNome');
-var saveIdade = document.getElementById('saveIdade');
-var saveTelefone = document.getElementById('saveTelefone');
-var saveEstado = document.getElementById('saveEstado');
-
 var btnEdit = document.getElementById('btnEdit');
 var btnFimEdit = document.getElementById('btnFimEdit');
 var btnNaveg = document.getElementById('btnNaveg');
@@ -59,7 +50,7 @@ var btnPerfil = document.getElementById('btnPerfil');
 var btnSignOut = document.getElementById('btnSignOut');
 var updatePhoto = document.getElementById('updatePhoto');
 
-
+//upload de nova foto de perfil
 updatePhoto.addEventListener('change', function(e){
     var storage = firebase.storage();
     var dataRef = firebase.database().ref();
@@ -87,10 +78,6 @@ updatePhoto.addEventListener('change', function(e){
 })
 
 btnEdit.addEventListener('click', function(){
-    editarNome.style.display = "inline";
-    editarIdade.style.display = "inline";
-    editarTelefone.style.display = "inline";
-    editarEstado.style.display = "inline";
     btnFimEdit.style.display = "inline";
     updatePhoto.style.display = "inline";
     btnEdit.style.display = "none";
@@ -98,73 +85,42 @@ btnEdit.addEventListener('click', function(){
     btnPerfil.style.display = "none";
     btnSignOut.style.display = "none";
     document.getElementById('info1').innerHTML = '*Edição para dados já cadastrados.';
+    nome.removeAttribute('disabled');
+    idade.style.display = "none";
+    telefone.removeAttribute('disabled');
+    estado.style.display = "none";
+    cidade.style.display = "none";
+    states.style.display = "inline";
+    city.style.display = "inline";
+    document.getElementById('age').style.display = "inline";
 })
 
 btnFimEdit.addEventListener('click', function(){
-    editarNome.style.display = "none";
-    editarIdade.style.display = "none";
-    editarTelefone.style.display = "none";
-    editarEstado.style.display = "none";
+    var nome = document.getElementById('nome').value;
+    var idade = document.getElementById('idade').value;
+    var telefone = document.getElementById('telefone').value;
+    var estado = document.getElementById('states').value;
+    var cidade = document.getElementById('city').value;
+
+    data = {nome, idade, telefone, estado, cidade};
+
+    firebase.database().ref().child('users/' + firebase.auth().currentUser.uid).update(data);
+
     btnFimEdit.style.display = "none";
     updatePhoto.style.display = "none";
     btnEdit.style.display = "inline";
     btnNaveg.style.display = "inline";
     btnPerfil.style.display = "inline";
     btnSignOut.style.display = "inline";
+    document.getElementById('estado').style.display = "inline";
+    document.getElementById('cidade').style.display = "inline";
+    states.style.display = "none";
+    city.style.display = "none";
+    document.getElementById('idade').style.display = "inline";
+    document.getElementById('age').style.display = "none";
     document.getElementById('info1').innerHTML = '*Se ainda não tem dados cadastrados, click em NOVOS DADOS.';
+
     location.reload();
-})
-
-editarNome.addEventListener('click', function(){
-    nome.removeAttribute('disabled');
-    nome.setAttribute('required', true);
-    editarNome.style.display = "none";
-    saveNome.style.display = "inline";
-})
-
-saveNome.addEventListener('click', function(){
-    var dataRef = firebase.database().ref();
-    var nome = document.getElementById('nome').value;
-    data = {nome};
-    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
-
-    document.getElementById('nome').setAttribute('disabled', true);
-    editarNome.style.display = "inline";
-    saveNome.style.display = "none";
-})
-
-editarIdade.addEventListener('click', function(){
-    idade.removeAttribute('disabled');
-    editarIdade.style.display = "none";
-    saveIdade.style.display = "inline";
-})
-
-saveIdade.addEventListener('click', function(){
-    var dataRef = firebase.database().ref();
-    var idade = document.getElementById('idade').value;
-    data = {idade};
-    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
-
-    document.getElementById('idade').setAttribute('disabled', true);
-    editarIdade.style.display = "inline";
-    saveIdade.style.display = "none";    
-})
-
-editarTelefone.addEventListener('click', function(){
-    telefone.removeAttribute('disabled');
-    editarTelefone.style.display = "none";
-    saveTelefone.style.display = "inline";
-})
-
-saveTelefone.addEventListener('click', function(){
-    var dataRef = firebase.database().ref();
-    var telefone = document.getElementById('telefone').value;
-    data = {telefone};
-    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
-
-    document.getElementById('telefone').setAttribute('disabled', true);
-    editarTelefone.style.display = "inline";
-    saveTelefone.style.display = "none";    
 })
 
 function mTel(tel){
@@ -179,28 +135,3 @@ function mTel(tel){
     if (v.length == 2) tel.value += " ";
     if (v.length == 8) tel.value += "-";
 }
-
-editarEstado.addEventListener('click', function(){
-    document.getElementById('estado').style.display = "none";
-    document.getElementById('cidade').style.display = "none";
-    document.getElementById('city').style.display = "inline";
-    document.getElementById('states').style.display = "inline";
-    editarEstado.style.display = "none";
-    saveEstado.style.display = "inline";
-})
-
-saveEstado.addEventListener('click', function(){
-    var dataRef = firebase.database().ref();
-    var cidade = document.querySelector('#city').value;
-    var estado = document.querySelector('#states').value;
-
-    data = {estado, cidade};
-    dataRef.child('users/' + firebase.auth().currentUser.uid).update(data);
-
-    document.getElementById('estado').style.display = "inline";
-    document.getElementById('cidade').style.display = "inline";
-    document.getElementById('city').style.display = "none";
-    document.getElementById('states').style.display = "none";
-    editarEstado.style.display = "inline";
-    saveEstado.style.display = "none";
-})

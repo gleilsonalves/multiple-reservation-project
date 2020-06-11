@@ -22,12 +22,20 @@
 } 
 
 #cpf{
-    margin-left: 2.05rem;
+    margin-left: 1.4rem;
+}
+
+#pessoa{
+    margin-left: .8rem;
 }
 
 #pais{
     margin-left: 1.95rem;
-} 
+}
+
+#servico{
+    margin-left: .5rem;
+}
 
 #estado, #states{
     margin-left: .8rem;
@@ -38,7 +46,7 @@
 }
 
 .tags{
-    padding: .5rem; 
+    padding: .4rem; 
     background-color: rgba(0, 0, 0, 0.562); 
     margin-left: 1rem; 
     border-radius: 8px;
@@ -58,4 +66,8 @@
 
 #age{
     margin-left: 1.2rem;
+}
+
+#tipoServiço{
+    margin-left: .5rem;
 }

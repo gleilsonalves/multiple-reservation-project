@@ -2,7 +2,8 @@ var logado = document.getElementById('logado');
 var btnLogado = document.getElementById('btnLogado');
 var btnPerfil = document.getElementById('btnPerfil');
 
-firebase.auth().onAuthStateChanged(function(user){
+var user = firebase.auth().currentUser;
+
     if(user){
         console.log('Usuario logado');
         firebase.database().ref('users/' + user.uid).on('value', function(snapshot){
@@ -17,7 +18,6 @@ firebase.auth().onAuthStateChanged(function(user){
         btnLogado.style.display = "none";
         btnPerfil.style.display = "none";
     }
-})
 
 btnLogado.addEventListener('click', function(){
     firebase.auth().signOut().then(function() {

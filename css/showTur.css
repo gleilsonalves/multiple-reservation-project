@@ -38,7 +38,8 @@
 }
 
 .tags{
-    padding: .5rem; 
+    padding: .1rem;
+    margin-bottom: .2rem;
     background-color: rgba(0, 0, 0, 0.562); 
     margin-left: 1rem; 
     border-radius: 8px;

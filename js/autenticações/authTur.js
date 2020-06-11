@@ -123,5 +123,5 @@ function newPopup(){
     var Window = window.open (
         'popup.html',
         'pagina',
-        "width=370, height=275, top=100, left=110, scrollbars=no " );
+        "width=400, height=300, top=100, left=110, scrollbars=no " );
 }

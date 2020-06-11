@@ -1,0 +1,25 @@
+body{
+    background-image: url("/img/bg.jpg");
+    display: block;
+}
+
+label{
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.329);
+    border-radius: 15px;
+    padding: .2rem;
+}
+
+.container h4{
+    display: block;
+    padding-bottom: .25rem;
+    width: 60%;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: bold; 
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.438);
+    text-align: center;
+    border-radius: 20px;
+}

@@ -3,9 +3,8 @@ var sendReset = document.getElementById('sendReset');
 
 sendReset.addEventListener('click', function(){
     firebase.auth().sendPasswordResetEmail(emailReset.value).then(function(){
-        alert('Enviamos um link para reset da senha');
-        window.close();
+        document.getElementById('msg').innerHTML = 'Enviamos um link para seu e-mail, feche essa janela';
     }).catch(function(){
-        alert('Erro na solicitação de reset da senha!');
+        document.getElementById('msg').innerHTML = 'E-mail informando não está cadastrado';
     })
 })

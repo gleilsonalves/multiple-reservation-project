@@ -1,0 +1,44 @@
+.conteudo{
+    border: 2px solid white;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: .2rem;
+}
+
+.indicadores{
+    color: yellow;
+    font-weight: bold;
+}
+
+#informe{
+    width: 75%;
+    margin-left: 2.8rem;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.445);
+    text-align: center;
+    border-radius: 10px;
+}
+
+#informe p{
+    font-size: 1rem;
+    margin-top: .3rem;
+}
+
+.title{
+    color: white;
+}
+
+.imagemURL{
+    width:17rem; 
+    border-radius: 20px;
+}
+
+.data-contents{
+    background-color: rgba(0, 0, 0, 0.411); 
+    margin-top: .3rem;
+}
+
+.valores{
+    color: white;
+}

@@ -3,17 +3,6 @@ var inputSenha = document.getElementById('inputPass');
 
 var btnSubmit = document.getElementById('submit');
 
-function observador(){
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('Observador funciona!')
-            console.log(user);
-        } else {
-            console.log('Erro no observador.');
-        }
-      });
-}
-
 btnSubmit.addEventListener('click', function(){
     firebase.auth().createUserWithEmailAndPassword(inputEmail.value, inputSenha.value).then(function(result){
         console.log('Cadastro efetuado com sucesso.');
@@ -26,12 +15,16 @@ btnSubmit.addEventListener('click', function(){
             window.location.reload();
         }).catch(function(error){
             console.log(error);
-        });     
+        });
+        firebase.auth().signOut();
     }).catch(function(error){
         console.log('Falha ao cadastrar');
         console.log(error);
         alert('Erro no cadastro! Verifique os dados e tente novamente.');
+        firebase.auth().signOut();
         window.location.reload();
     });
+
+    
 })
 

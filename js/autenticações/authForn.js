@@ -30,6 +30,8 @@ btnSubmit.addEventListener('click', function(){
             })        
         }).catch(function(error){
             console.log('Erro no login.');
+            alert('ERRO NO LOGIN!');
+            alert('Verifique se seu e-mail e senhas estão corretos.');
             console.log(error);
         })
     }

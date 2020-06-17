@@ -57,13 +57,12 @@ fotoPerfil.addEventListener('change', function(e){
 });
 
 // Evento de inserção de dados no BD Firebase
-btnSubmit.addEventListener('click', function(){
-  //const autoId = dataRef.push().key;
-  
+btnSubmit.addEventListener('click', function(){  
   if(tipoPessoa.value == 'fisica'){
     dataRef.child(firebase.auth().currentUser.uid).set({
       tipo_user: 'fornecedor',
       nome: nomeForn.value,
+      email: user.email,
       tipoPessoa: tipoPessoa.value,
       idade: idade.value,        
       cpf: cpf.value,
@@ -84,6 +83,7 @@ btnSubmit.addEventListener('click', function(){
     dataRef.child(firebase.auth().currentUser.uid).set({
       tipo_user: 'fornecedor',
       nome: nomeForn.value,
+      email: firebase.auth().currentUser.email,
       tipoPessoa: tipoPessoa.value,       
       cnpj: cnpj.value,
       tipoServiço: tipoServiço.value,

@@ -72,3 +72,13 @@
 #tipoServiço{
     margin-left: .5rem;
 }
+
+.aviso{
+    border-radius: 20px;
+    width: 18rem;
+    font-size: .8rem;
+    text-align: center; 
+    color: white; 
+    font-weight: bold; 
+    background-color: rgba(253, 4, 4, 0.575);
+}

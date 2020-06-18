@@ -22,7 +22,6 @@
         <p class="title-text">Seu Perfil Multiple Reservation</p>
       </div>
     </div>
-
     <div class="container-fluid title-content">
         <h4>Dados Perfil do Fornecedor</h4>
     </div>
@@ -32,11 +31,17 @@
     </div>
 
     <div class="container-fluid">
+      <div class="row" id="avisoServ" style="display: none;">
+        <div class="col">
+        <p class="aviso">*Existe um serviço cadastrado no seu perfil!</p>        
+        </div>
+      </div>
+      
       <div class="row">
-          <a class="tags" style="color: white;">Usuário</a> 
-          <div class="col">
-            <input class="inputs" type="text" value="" class="w-auto" id="nome" placeholder="sem dados" disabled>
-          </div>
+        <a class="tags" style="color: white;">Usuário</a> 
+        <div class="col">
+          <input class="inputs" type="text" value="" class="w-auto" id="nome" placeholder="sem dados" disabled>
+        </div>
       </div>
       <div class="row">
         <a class="tags" style="color: white;">E-mail</a>
@@ -156,7 +161,7 @@
         <div class="col">
           <button class="btn btn-success btn-sm" type="button" id="addService" onclick="newPopup()" style="margin-top: .5rem;">Serviço <i class="fas fa-plus"></i></button>
         </div>
-      </div>
+      </div>      
     </div>    
     
     <h7 id="info1" style="color: white; font-weight: normal;">*Se ainda não há dados, click em NOVOS DADOS.</h7>

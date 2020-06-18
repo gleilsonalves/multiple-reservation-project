@@ -209,4 +209,16 @@ function newPopup(){
     var Window = window.open (
         'pop-up/add-serv.html',
         'pagina');
-}
+};
+
+var database = firebase.database().ref('service');
+database.once('value').then(function(snapshot){
+    if(snapshot.exists()){
+        snapshot.forEach(function(childSnapshot){
+            var data = childSnapshot.key;
+            if(data == firebase.auth().currentUser.uid){
+                document.getElementById('avisoServ').style.display = "block";
+            }
+        });
+    } 
+});

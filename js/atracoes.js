@@ -131,7 +131,7 @@ function montarCardTur(titulo, desc, contato, valor, imagem, id, zap){
 
     row.classList.add('row');
     col.classList.add('col-sm', 'conteudo');
-    h5.classList.add('title');
+    h5.classList.add('title-h5');
     col1.classList.add('col-sm');
     col2.classList.add('col-sm', 'data-contents');
     img.classList.add('imagemURL');

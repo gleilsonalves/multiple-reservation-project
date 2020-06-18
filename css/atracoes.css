@@ -1,5 +1,6 @@
 .conteudo{
     border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.445);
     border-radius: 15px;
     text-align: center;
     margin-bottom: .2rem;
@@ -15,7 +16,6 @@
     margin-left: 2.8rem;
     color: white;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.445);
     text-align: center;
     border-radius: 10px;
 }
@@ -25,7 +25,7 @@
     margin-top: .3rem;
 }
 
-.title{
+.title-h5{
     color: white;
 }
 
@@ -35,7 +35,6 @@
 }
 
 .data-contents{
-    background-color: rgba(0, 0, 0, 0.411); 
     margin-top: .3rem;
 }
 

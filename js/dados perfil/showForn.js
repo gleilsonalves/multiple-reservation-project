@@ -218,7 +218,6 @@ database.once('value').then(function(snapshot){
             var data = childSnapshot.key;
             if(data == firebase.auth().currentUser.uid){
                 document.getElementById('avisoServ').style.display = "block";
-                document.getElementById('addServicoForn').style.display = 'none';
             }
         });
     } 

@@ -7,37 +7,51 @@
 
     <link rel="stylesheet" href="/css/add-serv.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ff42418a92.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h4>Cadastro de Serviços</h4><br>
-        <div class="row">
-            <div class="col-sm">
-                <label for="">Titulo</label><br>
-                <input type="text" id="titulo" placeholder="Título">
+    <img src="/img/logo.png" class="img-fluid logo" alt="Responsive image">
+    <div class="content-all">
+        <div class="container info-content">
+            <h4>Cadastro de Serviço</h4><br>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="">Titulo</label><br>
+                    <input type="text" id="titulo" placeholder="Título">
+                </div>
             </div>
-            <div class="col-sm">
-                <label for="">Descrição</label><br>
-                <textarea cols="23" rows="6" id="desc" placeholder="Descreva com riqueza de detalhes seu serviço."></textarea>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="">Descrição</label><br>
+                    <input type="text" class="w-auto" id="desc" placeholder="Descreva com riqueza de detalhes seu serviço."></input>
+                </div>
             </div>
-            <div class="col-sm">
-                <label for="" id="teste">Contato/Whatsapp</label><br>
-                <input type="text" id="contato" placeholder="Contato">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="" id="teste">Whatsapp</label><br>
+                    <input type="text" id="contato" placeholder="Contato" oninput="mTel(this)">
+                </div>
             </div>
-            <div class="col-sm">
-                <label for="">Valor</label><br>
-                <input type="text" id="valor" placeholder="Valor R$">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="">Valor</label><br>
+                    <input type="text" id="valor" placeholder="Valor R$">
+                </div>
             </div>
-            <div class="col-sm">
-                <label for="">Imagem ou video</label>
-                <input class="" id="imagem" type="file">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="imagem" class="file"><i class="far fa-image"></i> Esolha a imagem</label>
+                    <input id="imagem" type="file" accept="image/*">
+                </div>
             </div>
-            <div class="col-sm">
-                <button class="btn btn-success btn-sm" id="saveServ">Salvar</button>
-                <button class="btn btn-success btn-sm" onclick="window.close()">Cancelar</button>
+            <div class="col-sm botoes">
+                    <button class="btn btn-success btn-sm botao-style" id="saveServ">Salvar</button>
+                    <button class="btn btn-success btn-sm botao-style" onclick="window.close()">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
+    
     
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>

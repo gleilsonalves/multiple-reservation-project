@@ -1,25 +1,91 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    font-weight: bold;
+}
+
 body{
-    background-image: url("/img/bg.jpg");
-    display: block;
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 label{
     color: white;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.329);
     border-radius: 15px;
     padding: .2rem;
 }
 
+.logo{
+    position: relative;    
+    width: 40vh;
+    margin-left: 1%;
+}
+
 .container h4{
     display: block;
-    padding-bottom: .25rem;
-    width: 60%;
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.5rem;
+    margin-top: .5rem;
     font-weight: bold; 
     color: yellow;
-    background-color: rgba(0, 0, 0, 0.438);
-    text-align: center;
+    text-align: start;
+}
+
+#imagem{
+    margin-bottom: .5rem;
+    outline: none;
+}
+
+.info-content{
+    width: 70% !important;
+    margin-top: 1rem;
+    border: 1px solid white;
     border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.418);
+    display: block;
+    margin-left: 0 !important;
+}
+
+.botoes{
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    margin-left:0 !important;
+}
+
+.botao-style{
+    border-radius: 20px !important;
+    width: 5rem;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.file{
+    margin-top: .6rem;
+    background-color: rgba(0, 0, 0, 0.788);
+    color: white;
+    border-radius: 5px;
+    margin-left: .5rem;
+}
+
+.file:hover{
+    background-color: rgba(255, 255, 255, 0.479);
+    color: red;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.content-all{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

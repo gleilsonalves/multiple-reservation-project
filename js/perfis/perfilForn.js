@@ -62,7 +62,7 @@ btnSubmit.addEventListener('click', function(){
     dataRef.child(firebase.auth().currentUser.uid).set({
       tipo_user: 'fornecedor',
       nome: nomeForn.value,
-      email: user.email,
+      email: firebase.auth().currentUser.email,
       tipoPessoa: tipoPessoa.value,
       idade: idade.value,        
       cpf: cpf.value,

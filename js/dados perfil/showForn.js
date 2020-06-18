@@ -208,6 +208,5 @@ btnFimEdit.addEventListener('click', function(){
 function newPopup(){
     var Window = window.open (
         'pop-up/add-serv.html',
-        'pagina',
-        "width=370, height=510, top=100, left=110, scrollbars=no " );
+        'pagina');
 }

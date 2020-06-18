@@ -47,3 +47,16 @@ firebase.auth().onAuthStateChanged(function(user){
         console.log('Usuário não logado');
     }
 });
+
+function mTel(tel){
+    var v = tel.value;
+ 
+    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+       tel.value = v.substring(0, v.length-1);
+       return;
+    }
+ 
+    tel.setAttribute("maxlenght", "14");
+    if (v.length == 2) tel.value += " ";
+    if (v.length == 8) tel.value += "-";
+};

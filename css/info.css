@@ -5,7 +5,7 @@
 .texto-apresentacao{
     width: 100%;
     display: block;
-    background-color: rgba(0, 0, 0, 0.178);
+    background-color: rgba(0, 0, 0, 0.418);
     text-align: center;
     color: white;
 }
@@ -31,4 +31,8 @@
 
 .carrousel-div{
     width: 70%;
+}
+
+.slide{
+    width: 80% !important;
 }
